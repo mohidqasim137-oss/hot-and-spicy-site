@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot N Spicy B.B.Q - Legendary BBQ & Roll Parathas</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f0f11',
+                            card: '#18181b',
+                            amber: '#f59e0b',
+                            gold: '#fbbf24',
+                            accent: '#dc2626'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f0f11;
+            color: #f4f4f5;
+        }
+        .glow-gold {
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.25);
+        }
+        .glow-card:hover {
+            box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.3);
+            border-color: rgba(245, 158, 11, 0.5);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f0f11;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-100 selection:bg-amber-500 selection:text-black">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Custom Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-12 h-12 bg-zinc-900 border border-amber-500/40 rounded-2xl flex items-center justify-center shadow-lg shadow-amber-500/20 group-hover:scale-105 transition duration-300 relative overflow-hidden">
+                    <img src="images/logo.jpg" alt="Hot N Spicy Logo" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <span class="text-xl sm:text-2xl font-black tracking-wider bg-gradient-to-r from-amber-400 via-amber-200 to-red-500 bg-clip-text text-transparent">HOT N SPICY</span>
+                    <span class="block text-[10px] tracking-widest text-amber-500 font-semibold uppercase">B.B.Q & Roll Parathas</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8 font-medium">
+                <a href="#hero" class="text-amber-400 hover:text-amber-300 transition">Home</a>
+                <a href="#menu" class="text-gray-300 hover:text-amber-400 transition">Menu</a>
+                <a href="#sauces" class="text-gray-300 hover:text-amber-400 transition">Signature Sauces</a>
+                <a href="#gallery" class="text-gray-300 hover:text-amber-400 transition">Gallery</a>
+                <a href="#contact" class="text-gray-300 hover:text-amber-400 transition">Location & Order</a>
+            </div>
+
+            <!-- Action Button -->
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#contact" class="bg-gradient-to-r from-amber-500 to-orange-500 text-black font-bold px-5 py-2.5 rounded-xl hover:from-amber-400 hover:to-orange-400 transition shadow-lg shadow-amber-500/20">
+                    <i class="fa-solid fa-utensils mr-2"></i>Order Now
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-amber-400 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Modal -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-zinc-800 px-6 py-6 space-y-4">
+            <a href="#hero" class="block text-amber-400 font-medium py-2 mobile-link">Home</a>
+            <a href="#menu" class="block text-gray-300 font-medium py-2 mobile-link">Menu</a>
+            <a href="#sauces" class="block text-gray-300 font-medium py-2 mobile-link">Signature Sauces</a>
+            <a href="#gallery" class="block text-gray-300 font-medium py-2 mobile-link">Gallery</a>
+            <a href="#contact" class="block text-gray-300 font-medium py-2 mobile-link">Location & Order</a>
+            <a href="#contact" class="block text-center bg-gradient-to-r from-amber-500 to-orange-500 text-black font-bold py-3 rounded-xl">Order Now</a>
+        </div>
+    </nav>
+
+    <header id="hero" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-zinc-900 border border-amber-500/30 px-4 py-2 rounded-full text-amber-400 text-sm font-semibold">
+                        <i class="fa-solid fa-fire text-red-500"></i>
+                        <span>Free Home Delivery in Bahria Enclave, Islamabad</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight">
+                        Authentic Charcoal <br>
+                        <span class="bg-gradient-to-r from-amber-400 via-orange-400 to-red-500 bg-clip-text text-transparent">Hot N Spicy B.B.Q</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto lg:mx-0">
+                        Experience legendary smoky BBQ skewers, tender tikkas, and ultra-loaded crispy roll parathas wrapped fresh daily with secret house sauces.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+                        <a href="#menu" class="w-full sm:w-auto bg-gradient-to-r from-amber-500 to-orange-500 text-black font-bold px-8 py-4 rounded-xl hover:scale-105 transition shadow-xl shadow-amber-500/20 text-center">
+                            Explore Menu <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#contact" class="w-full sm:w-auto bg-zinc-900 border border-zinc-700 hover:border-amber-500 text-gray-200 font-bold px-8 py-4 rounded-xl transition text-center">
+                            Order on WhatsApp
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-zinc-800 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-amber-400">100%</div>
+                            <div class="text-xs sm:text-sm text-gray-400">Charcoal Grilled</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-amber-400">FREE</div>
+                            <div class="text-xs sm:text-sm text-gray-400">Home Delivery</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-amber-400">4.9★</div>
+                            <div class="text-xs sm:text-sm text-gray-400">Customer Rating</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-red-600 rounded-3xl blur-lg opacity-35 animate-pulse"></div>
+                        <div class="relative bg-brand-card border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="images/roll1.jpg" alt="Hot N Spicy Roll Paratha" class="w-full h-[420px] object-cover hover:scale-105 transition duration-500">
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/70 to-transparent p-6">
+                                <span class="bg-amber-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Chef's Special</span>
+                                <h3 class="text-xl font-bold text-white mt-2">Hot N Spicy Signature Roll</h3>
+                                <p class="text-sm text-gray-300">Crispy flaky paratha loaded with juicy grilled boti & secret dips.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="menu" class="py-24 bg-zinc-950 border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 max-w-3xl mx-auto mb-16">
+                <span class="text-amber-500 font-bold uppercase tracking-widest text-sm">Delicious Offerings</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Hot N Spicy Menu</h2>
+                <p class="text-gray-400 text-base sm:text-lg">Freshly prepared on live charcoal pits daily. Select a category below.</p>
+
+                <div class="flex flex-wrap justify-center gap-3 pt-6">
+                    <button onclick="filterMenu('all')" id="btn-all" class="menu-tab-btn px-6 py-2.5 rounded-xl font-bold text-sm bg-amber-500 text-black transition shadow-lg">All Items</button>
+                    <button onclick="filterMenu('bbq')" id="btn-bbq" class="menu-tab-btn px-6 py-2.5 rounded-xl font-bold text-sm bg-zinc-900 border border-zinc-800 text-gray-300 hover:border-amber-500 transition">BBQ Platters & Tikkas</button>
+                    <button onclick="filterMenu('rolls')" id="btn-rolls" class="menu-tab-btn px-6 py-2.5 rounded-xl font-bold text-sm bg-zinc-900 border border-zinc-800 text-gray-300 hover:border-amber-500 transition">Roll Parathas</button>
+                    <button onclick="filterMenu('specials')" id="btn-specials" class="menu-tab-btn px-6 py-2.5 rounded-xl font-bold text-sm bg-zinc-900 border border-zinc-800 text-gray-300 hover:border-amber-500 transition">Specials & Deals</button>
+                </div>
+            </div>
+
+            <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Item 1 -->
+                <div class="menu-item group bg-brand-card border border-zinc-800 rounded-3xl overflow-hidden glow-card transition duration-300 flex flex-col justify-between" data-category="rolls">
+                    <div>
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="images/roll2.jpg" alt="Chicken Malai Boti Roll" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <span class="absolute top-4 right-4 bg-black/70 backdrop-blur-md text-amber-400 font-black px-3 py-1 rounded-lg text-sm border border-amber-500/30">Rs. 550</span>
+                            <span class="absolute top-4 left-4 bg-amber-500 text-black font-bold text-xs px-3 py-1 rounded-full uppercase">Best Seller</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition">Chicken Malai Boti Roll</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Juicy creamy chicken cubes grilled over slow charcoal, wrapped in a buttery flaky paratha with crisp onions & garlic dip.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between border-t border-zinc-900 mt-4">
+                        <span class="text-xs text-amber-500/80 font-medium"><i class="fa-solid fa-fire mr-1"></i> Creamy & Spicy</span>
+                        <button onclick="addItemToOrder('Chicken Malai Boti Roll', 550)" class="bg-zinc-900 border border-amber-500/40 text-amber-400 hover:bg-amber-500 hover:text-black font-bold px-4 py-2 rounded-xl text-sm transition">
+                            <i class="fa-solid fa-plus mr-1"></i> Add
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="menu-item group bg-brand-card border border-zinc-800 rounded-3xl overflow-hidden glow-card transition duration-300 flex flex-col justify-between" data-category="bbq">
+                    <div>
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="images/bbq2.jpg" alt="Charcoal BBQ Skewers" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <span class="absolute top-4 right-4 bg-black/70 backdrop-blur-md text-amber-400 font-black px-3 py-1 rounded-lg text-sm border border-amber-500/30">Rs. 850</span>
+                            <span class="absolute top-4 left-4 bg-red-600 text-white font-bold text-xs px-3 py-1 rounded-full uppercase">Live Pit</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition">Hot N Spicy Seekh Kebab Platter</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Hand-minced prime beef skewers infused with crushed aromatic herbs & charcoal smoke, served with chutney & naan.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between border-t border-zinc-900 mt-4">
+                        <span class="text-xs text-amber-500/80 font-medium"><i class="fa-solid fa-fire mr-1"></i> Extremely Spicy</span>
+                        <button onclick="addItemToOrder('Hot N Spicy Seekh Kebab Platter', 850)" class="bg-zinc-900 border border-amber-500/40 text-amber-400 hover:bg-amber-500 hover:text-black font-bold px-4 py-2 rounded-xl text-sm transition">
+                            <i class="fa-solid fa-plus mr-1"></i> Add
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="menu-item group bg-brand-card border border-zinc-800 rounded-3xl overflow-hidden glow-card transition duration-300 flex flex-col justify-between" data-category="bbq">
+                    <div>
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="images/bbq1.jpg" alt="Chicken Tikka Leg & Breast" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <span class="absolute top-4 right-4 bg-black/70 backdrop-blur-md text-amber-400 font-black px-3 py-1 rounded-lg text-sm border border-amber-500/30">Rs. 480</span>
+                            <span class="absolute top-4 left-4 bg-amber-500 text-black font-bold text-xs px-3 py-1 rounded-full uppercase">Must Try</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition">Charcoal Chicken Tikka</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Tender chicken leg or breast marinated in yogurt and traditional red spices, slow-grilled over hot glowing coals.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between border-t border-zinc-900 mt-4">
+                        <span class="text-xs text-amber-500/80 font-medium"><i class="fa-solid fa-fire mr-1"></i> Smoky & Juicy</span>
+                        <button onclick="addItemToOrder('Charcoal Chicken Tikka', 480)" class="bg-zinc-900 border border-amber-500/40 text-amber-400 hover:bg-amber-500 hover:text-black font-bold px-4 py-2 rounded-xl text-sm transition">
+                            <i class="fa-solid fa-plus mr-1"></i> Add
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="menu-item group bg-brand-card border border-zinc-800 rounded-3xl overflow-hidden glow-card transition duration-300 flex flex-col justify-between" data-category="rolls">
+                    <div>
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="images/roll1.jpg" alt="Special Roll Paratha" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <span class="absolute top-4 right-4 bg-black/70 backdrop-blur-md text-amber-400 font-black px-3 py-1 rounded-lg text-sm border border-amber-500/30">Rs. 600</span>
+                            <span class="absolute top-4 left-4 bg-red-600 text-white font-bold text-xs px-3 py-1 rounded-full uppercase">Hot Seller</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition">Hot N Spicy Special Roll</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Spicy chicken chunks, melted cheese, and special chili garlic sauce wrapped inside an egg-coated crispy paratha.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between border-t border-zinc-900 mt-4">
+                        <span class="text-xs text-amber-500/80 font-medium"><i class="fa-solid fa-fire mr-1"></i> Super Spicy</span>
+                        <button onclick="addItemToOrder('Hot N Spicy Special Roll', 600)" class="bg-zinc-900 border border-amber-500/40 text-amber-400 hover:bg-amber-500 hover:text-black font-bold px-4 py-2 rounded-xl text-sm transition">
+                            <i class="fa-solid fa-plus mr-1"></i> Add
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="menu-item group bg-brand-card border border-zinc-800 rounded-3xl overflow-hidden glow-card transition duration-300 flex flex-col justify-between" data-category="specials">
+                    <div>
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="images/bbq2.jpg" alt="Family BBQ Platter" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <span class="absolute top-4 right-4 bg-black/70 backdrop-blur-md text-amber-400 font-black px-3 py-1 rounded-lg text-sm border border-amber-500/30">Rs. 2,499</span>
+                            <span class="absolute top-4 left-4 bg-amber-500 text-black font-bold text-xs px-3 py-1 rounded-full uppercase">Mega Deal</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition">Hot N Spicy Family Platter</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Includes Malai Boti, Chicken Tikkas, Beef Seekh Kebabs, 4 Naans, Mint Chutney, and 1.5L Drink. Serves 3-4.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between border-t border-zinc-900 mt-4">
+                        <span class="text-xs text-amber-500/80 font-medium"><i class="fa-solid fa-fire mr-1"></i> Family Feast</span>
+                        <button onclick="addItemToOrder('Hot N Spicy Family Platter', 2499)" class="bg-zinc-900 border border-amber-500/40 text-amber-400 hover:bg-amber-500 hover:text-black font-bold px-4 py-2 rounded-xl text-sm transition">
+                            <i class="fa-solid fa-plus mr-1"></i> Add
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="menu-item group bg-brand-card border border-zinc-800 rounded-3xl overflow-hidden glow-card transition duration-300 flex flex-col justify-between" data-category="specials">
+                    <div>
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="images/roll2.jpg" alt="Roll Combo Deal" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <span class="absolute top-4 right-4 bg-black/70 backdrop-blur-md text-amber-400 font-black px-3 py-1 rounded-lg text-sm border border-amber-500/30">Rs. 750</span>
+                            <span class="absolute top-4 left-4 bg-amber-500 text-black font-bold text-xs px-3 py-1 rounded-full uppercase">Best Value</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition">Roll Combo Meal</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Any Roll Paratha of your choice + French Fries + Cold Drink. Pure satisfaction.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between border-t border-zinc-900 mt-4">
+                        <span class="text-xs text-amber-500/80 font-medium"><i class="fa-solid fa-fire mr-1"></i> Combo Deal</span>
+                        <button onclick="addItemToOrder('Roll Combo Meal', 750)" class="bg-zinc-900 border border-amber-500/40 text-amber-400 hover:bg-amber-500 hover:text-black font-bold px-4 py-2 rounded-xl text-sm transition">
+                            <i class="fa-solid fa-plus mr-1"></i> Add
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="sauces" class="py-24 bg-brand-dark relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-red-950/10 to-transparent pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center space-y-4 max-w-2xl mx-auto mb-16">
+                <span class="text-amber-500 font-bold uppercase tracking-widest text-sm">Secret Recipes</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Hot N Spicy Signature Dips</h2>
+                <p class="text-gray-400">What makes our rolls and BBQ unforgettable? Our freshly ground house dips and chutneys.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-brand-card border border-zinc-800 p-8 rounded-3xl relative overflow-hidden group hover:border-amber-500 transition duration-300">
+                    <div class="w-14 h-14 bg-amber-500/15 border border-amber-500/30 rounded-2xl flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-pepper-hot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Fiery Chili Garlic</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">A punchy red chili and roasted garlic paste that packs real heat and awakens every taste bud.</p>
+                    <div class="mt-6 flex items-center text-amber-400 text-xs font-bold uppercase tracking-wider">
+                        <span>Pairs Best With: BBQ Skewers</span>
+                    </div>
+                </div>
+
+                <div class="bg-brand-card border border-zinc-800 p-8 rounded-3xl relative overflow-hidden group hover:border-amber-500 transition duration-300">
+                    <div class="w-14 h-14 bg-amber-500/15 border border-amber-500/30 rounded-2xl flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Mint & Coriander Chutney</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Fresh garden mint, coriander, and green chilies blended with thick yogurt for traditional zest.</p>
+                    <div class="mt-6 flex items-center text-amber-400 text-xs font-bold uppercase tracking-wider">
+                        <span>Pairs Best With: Chicken Tikkas</span>
+                    </div>
+                </div>
+
+                <div class="bg-brand-card border border-zinc-800 p-8 rounded-3xl relative overflow-hidden group hover:border-amber-500 transition duration-300">
+                    <div class="w-14 h-14 bg-amber-500/15 border border-amber-500/30 rounded-2xl flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-cheese"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Special Mayo Dip</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Creamy, rich, and slightly tangy garlic mayonnaise that perfectly balances the spicy punch of our rolls.</p>
+                    <div class="mt-6 flex items-center text-amber-400 text-xs font-bold uppercase tracking-wider">
+                        <span>Pairs Best With: Roll Parathas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-24 bg-zinc-950 border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 max-w-2xl mx-auto mb-16">
+                <span class="text-amber-500 font-bold uppercase tracking-widest text-sm">Visual Feast</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Glimpse Inside Hot N Spicy</h2>
+                <p class="text-gray-400">Live charcoal pits, fresh roll preparation, and sizzling platters.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="group relative overflow-hidden rounded-3xl bg-brand-card border border-zinc-800 h-72">
+                    <img src="images/bbq2.jpg" alt="Charcoal Pit" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <span class="text-white font-bold text-sm">Live Charcoal Grilling</span>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-3xl bg-brand-card border border-zinc-800 h-72">
+                    <img src="images/roll1.jpg" alt="Roll Paratha" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <span class="text-white font-bold text-sm">Freshly Wrapped Roll Parathas</span>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-3xl bg-brand-card border border-zinc-800 h-72">
+                    <img src="images/bbq1.jpg" alt="BBQ Skewers" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <span class="text-white font-bold text-sm">Juicy Chicken Tikkas</span>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-3xl bg-brand-card border border-zinc-800 h-72">
+                    <img src="images/roll2.jpg" alt="Roll & Dips" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <span class="text-white font-bold text-sm">Served with Signature Chutneys</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-5 space-y-8">
+                    <div class="space-y-4">
+                        <span class="text-amber-500 font-bold uppercase tracking-widest text-sm">Visit & Connect</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Free Home Delivery in Bahria Enclave</h2>
+                        <p class="text-gray-400">Order online for quick home delivery or drop by our location in Islamabad.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-zinc-900 border border-zinc-800 rounded-xl flex items-center justify-center text-amber-400 text-lg shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Location</h4>
+                                <p class="text-gray-400 text-sm">Bahria Enclave Main Zoo Road Opp Royal Mall, Islamabad</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-zinc-900 border border-zinc-800 rounded-xl flex items-center justify-center text-amber-400 text-lg shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Phone / WhatsApp Orders</h4>
+                                <p class="text-gray-400 text-sm">+92 (555) HOT-SPICY</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-zinc-900 border border-zinc-800 rounded-xl flex items-center justify-center text-amber-400 text-lg shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Opening Hours</h4>
+                                <p class="text-gray-400 text-sm">Mon - Sun: 1:00 PM – 2:00 AM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-brand-card border border-zinc-800 p-6 rounded-3xl space-y-4">
+                        <div class="flex justify-between items-center border-b border-zinc-800 pb-3">
+                            <h3 class="font-bold text-white"><i class="fa-solid fa-basket-shopping text-amber-400 mr-2"></i> Current Order Cart</h3>
+                            <span id="cart-count" class="bg-amber-500 text-black font-bold text-xs px-2.5 py-1 rounded-full">0 items</span>
+                        </div>
+                        <div id="cart-items" class="space-y-2 max-h-40 overflow-y-auto text-sm text-gray-300">
+                            <p class="text-gray-500 italic">Your cart is currently empty. Add items from the menu above!</p>
+                        </div>
+                        <div class="border-t border-zinc-800 pt-3 flex justify-between items-center font-bold">
+                            <span>Total:</span>
+                            <span id="cart-total" class="text-amber-400 text-lg">Rs. 0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="bg-brand-card border border-zinc-800 p-8 sm:p-10 rounded-3xl shadow-2xl relative">
+                        <div class="absolute -top-3 right-8 bg-gradient-to-r from-amber-500 to-red-500 text-black text-xs font-black uppercase px-4 py-1 rounded-full">
+                            Free Home Delivery
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-white mb-6">Place Order or Table Reservation</h3>
+                        
+                        <form id="order-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold uppercase text-gray-400">Your Full Name</label>
+                                    <input type="text" id="cust-name" required placeholder="Ahmed Khan" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-amber-500 transition">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold uppercase text-gray-400">Phone / WhatsApp Number</label>
+                                    <input type="tel" id="cust-phone" required placeholder="+92 300 0000000" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-amber-500 transition">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold uppercase text-gray-400">Order Type</label>
+                                    <select id="inquiry-type" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-amber-500 transition">
+                                        <option value="Home Delivery">Home Delivery (Bahria Enclave)</option>
+                                        <option value="Takeaway Pickup">Takeaway Pickup</option>
+                                        <option value="Table Reservation">Table Reservation</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold uppercase text-gray-400">Preferred Time</label>
+                                    <input type="text" id="cust-time" placeholder="Tonight at 9:00 PM" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-amber-500 transition">
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase text-gray-400">Delivery Address in Bahria Enclave / Instructions</label>
+                                <textarea rows="3" id="cust-notes" placeholder="Enter sector, street, house number or cooking spice preference..." class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-amber-500 transition"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-gradient-to-r from-amber-500 to-red-500 text-black font-extrabold py-4 rounded-xl hover:from-amber-400 hover:to-red-400 transition shadow-lg shadow-amber-500/20 text-center">
+                                Submit Order / Inquiry Now
+                            </button>
+                        </form>
+
+                        <div id="success-msg" class="hidden mt-6 p-4 bg-emerald-500/20 border border-emerald-500/50 rounded-2xl text-emerald-300 text-center font-medium">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mr-2 text-lg"></i> Order received successfully! Hot N Spicy B.B.Q team will contact you promptly.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black border-t border-zinc-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-zinc-900 border border-amber-500/40 rounded-xl flex items-center justify-center overflow-hidden">
+                    <img src="images/logo.jpg" alt="Logo" class="w-full h-full object-cover">
+                </div>
+                <span class="text-xl font-black tracking-wider text-white">HOT N SPICY B.B.Q</span>
+            </div>
+            
+            <p class="text-gray-500 text-sm text-center">
+                &copy; 2026 Hot N Spicy B.B.Q. Bahria Enclave Main Zoo Road Opp Royal Mall, Islamabad. All rights reserved.
+            </p>
+
+            <div class="flex items-center space-x-4 text-xl">
+                <a href="#" class="w-10 h-10 bg-zinc-900 border border-zinc-800 rounded-full flex items-center justify-center text-gray-400 hover:text-amber-400 hover:border-amber-500 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="w-10 h-10 bg-zinc-900 border border-zinc-800 rounded-full flex items-center justify-center text-gray-400 hover:text-amber-400 hover:border-amber-500 transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="w-10 h-10 bg-zinc-900 border border-zinc-800 rounded-full flex items-center justify-center text-gray-400 hover:text-amber-400 hover:border-amber-500 transition"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        function filterCategory(category) {
+            const items = document.querySelectorAll('.menu-item');
+            const buttons = document.querySelectorAll('.menu-tab-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-amber-500', 'text-black');
+                btn.classList.add('bg-zinc-900', 'border', 'border-zinc-800', 'text-gray-300');
+            });
+
+            const activeBtn = document.getElementById('btn-' + category);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-zinc-900', 'border', 'border-zinc-800', 'text-gray-300');
+                activeBtn.classList.add('bg-amber-500', 'text-black');
+            }
+
+            items.forEach(item => {
+                const itemCat = item.getAttribute('data-category');
+                if (category === 'all' || itemCat === category) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function filterMenu(cat) {
+            filterCategory(cat);
+        }
+
+        let cart = [];
+
+        function addItemToOrder(name, price) {
+            const existing = cart.find(i => i.name === name);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ name, price, qty: 1 });
+            }
+            updateCartUI();
+        }
+
+        function removeItemFromOrder(name) {
+            cart = cart.filter(i => i.name !== name);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cart-items');
+            const countBadge = document.getElementById('cart-count');
+            const totalEl = document.getElementById('cart-total');
+
+            const totalCount = cart.reduce((sum, i) => sum + i.qty, 0);
+            const totalPrice = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+
+            countBadge.innerText = totalCount + (totalCount === 1 ? ' item' : ' items');
+            totalEl.innerText = 'Rs. ' + totalPrice.toLocaleString();
+
+            if (cart.length === 0) {
+                container.innerHTML = '<p class="text-gray-500 italic">Your cart is currently empty. Add items from the menu above!</p>';
+                return;
+            }
+
+            let html = '';
+            cart.forEach(item => {
+                html += `
+                    <div class="flex justify-between items-center py-1.5 border-b border-zinc-900">
+                        <div>
+                            <span class="font-medium text-white">${item.name}</span>
+                            <span class="text-xs text-amber-400 ml-2">x${item.qty}</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-gray-300">Rs. ${(item.price * item.qty).toLocaleString()}</span>
+                            <button onclick="removeItemFromOrder('${item.name}')" class="text-red-400 hover:text-red-300 text-xs"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const successBox = document.getElementById('success-msg');
+            successBox.classList.remove('hidden');
+
+            document.getElementById('order-form').reset();
+            cart = [];
+            updateCartUI();
+
+            setTimeout(() => {
+                successBox.classList.add('hidden');
+            }, 6000);
+        }
+    </script>
+</body>
+</html>
